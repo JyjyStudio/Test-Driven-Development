@@ -34,6 +34,7 @@ describe('return the hightest number or world in an array', () => {
     })
     it('should return the highest value of an array', () => {
         expect(highestValueInArray([])).toBe('empty array')
+        expect(highestValueInArray(['test', 3])).toBe('mixed values')
         expect(highestValueInArray([0, 2])).toBe(2)
         expect(highestValueInArray(['hello', 'testing'])).toBe('testing')
     })
