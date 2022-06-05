@@ -38,12 +38,13 @@ const highestWordInArray = (arr : string[]) => {
 const highestValueInArray = (arr : Array<any>) => {
     if(arr.length == 0) return 'empty array' 
     else {
-        if(isArrayOfWords(arr)) {
-            return highestWordInArray(arr)
-        }
-        return highestNumberInArray(arr)        
+        if(isArrayOfWords(arr)) return highestWordInArray(arr)
+        if(isArrayOfNumbers(arr))return highestNumberInArray(arr)
+        return 'mixed values'        
     }
 }
+// console.log(highestValueInArray([222, 221, '0']));
+
 export {
     sum,
     checkSentenceLength,

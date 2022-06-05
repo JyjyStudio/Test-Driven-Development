@@ -47,10 +47,11 @@ const highestValueInArray = (arr) => {
     if (arr.length == 0)
         return 'empty array';
     else {
-        if (isArrayOfWords(arr)) {
+        if (isArrayOfWords(arr))
             return highestWordInArray(arr);
-        }
-        return highestNumberInArray(arr);
+        if (isArrayOfNumbers(arr))
+            return highestNumberInArray(arr);
+        return 'mixed values';
     }
 };
 exports.highestValueInArray = highestValueInArray;
