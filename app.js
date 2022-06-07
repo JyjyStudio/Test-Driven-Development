@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.highestValueInArray = exports.highestWordInArray = exports.highestNumberInArray = exports.isArrayOfWords = exports.isArrayOfNumbers = exports.is_Array = exports.isPalindrom = exports.checkSentenceLength = exports.sum = void 0;
+exports.detectForbiddenWords = exports.highestValueInArray = exports.highestWordInArray = exports.highestNumberInArray = exports.isArrayOfWords = exports.isArrayOfNumbers = exports.is_Array = exports.isPalindrom = exports.checkSentenceLength = exports.sum = void 0;
 const sum = (a, b) => a + b;
 exports.sum = sum;
 // console.log('sum(1,2) =', sum(1,2))
@@ -55,3 +55,10 @@ const highestValueInArray = (arr) => {
     }
 };
 exports.highestValueInArray = highestValueInArray;
+// console.log(highestValueInArray([222, 221, '0']));
+const detectForbiddenWords = (sentence) => {
+    const forbiddenWords = ['truffes', 'confitures', 'mayonnaise'];
+    const words = sentence.split(' ');
+    return words.some(word => forbiddenWords.includes(word.toLocaleLowerCase()));
+};
+exports.detectForbiddenWords = detectForbiddenWords;

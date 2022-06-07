@@ -45,6 +45,12 @@ const highestValueInArray = (arr : Array<any>) => {
 }
 // console.log(highestValueInArray([222, 221, '0']));
 
+const detectForbiddenWords = (sentence:string) => {
+    const forbiddenWords = ['truffes', 'confitures', 'mayonnaise']
+    const words = sentence.split(' ')
+    return words.some(word => forbiddenWords.includes(word.toLocaleLowerCase()))
+}
+
 export {
     sum,
     checkSentenceLength,
@@ -54,5 +60,6 @@ export {
     isArrayOfWords,
     highestNumberInArray,
     highestWordInArray,
-    highestValueInArray
+    highestValueInArray,
+    detectForbiddenWords
 }
