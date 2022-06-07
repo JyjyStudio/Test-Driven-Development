@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.detectForbiddenWords = exports.highestValueInArray = exports.highestWordInArray = exports.highestNumberInArray = exports.isArrayOfWords = exports.isArrayOfNumbers = exports.is_Array = exports.isPalindrom = exports.checkSentenceLength = exports.sum = void 0;
+exports.replaceForbiddenWords = exports.detectForbiddenWords = exports.highestValueInArray = exports.highestWordInArray = exports.highestNumberInArray = exports.isArrayOfWords = exports.isArrayOfNumbers = exports.is_Array = exports.isPalindrom = exports.checkSentenceLength = exports.sum = void 0;
 const sum = (a, b) => a + b;
 exports.sum = sum;
 // console.log('sum(1,2) =', sum(1,2))
@@ -62,3 +62,10 @@ const detectForbiddenWords = (sentence) => {
     return words.some(word => forbiddenWords.includes(word.toLocaleLowerCase()));
 };
 exports.detectForbiddenWords = detectForbiddenWords;
+const replaceForbiddenWords = (sentence) => {
+    const forbiddenWords = ['truffes', 'confitures', 'mayonnaise'];
+    return forbiddenWords.reduce((goodSentence, currentForbiddenWord) => {
+        return goodSentence.replace(currentForbiddenWord, 'xxx');
+    }, sentence);
+};
+exports.replaceForbiddenWords = replaceForbiddenWords;
