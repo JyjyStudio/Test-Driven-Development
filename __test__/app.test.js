@@ -60,9 +60,9 @@ describe('forbidden words', () => {
         expect(detectForbiddenWords('Vous êtes tous des tomates cerise')).toBeFalsy()
     })
     it('should replace forbidden words by xxx', () => {
-        expect(replaceForbiddenWords('Vous êtes tous des truffes')).toBe('Vous êtes tous des xxx')
+        expect(replaceForbiddenWords('Vous êtes tous des truffes que je roule dans la confiture')).toBe('Vous êtes tous des xxx que je roule dans la xxx')
     })
-    it('should replace ONLY forbidden words by xxx', () => {
-        expect(replaceForbiddenWords('Vous êtes tous des pommes')).toBe('Vous êtes tous des pommes')
+    it('should return the same sentence if no forbidden words detected', () => {
+        expect(replaceForbiddenWords('Vous êtes tous des pommes joufflues')).toBe('Vous êtes tous des pommes joufflues')
     })
 })
