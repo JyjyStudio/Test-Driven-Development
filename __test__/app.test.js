@@ -8,7 +8,8 @@ import {
     highestNumberInArray, 
     highestWordInArray,
     highestValueInArray, 
-    detectForbiddenWords 
+    detectForbiddenWords,
+    replaceForbiddenWords
 } from "../app.js";
 
 
@@ -57,5 +58,11 @@ describe('forbidden words', () => {
     })
     it('should NOT detect a forbidden word', () => {
         expect(detectForbiddenWords('Vous êtes tous des tomates cerise')).toBeFalsy()
+    })
+    it('should replace forbidden words by xxx', () => {
+        expect(replaceForbiddenWords('Vous êtes tous des truffes')).toBe('Vous êtes tous des xxx')
+    })
+    it('should replace ONLY forbidden words by xxx', () => {
+        expect(replaceForbiddenWords('Vous êtes tous des pommes')).toBe('Vous êtes tous des pommes')
     })
 })
