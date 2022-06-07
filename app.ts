@@ -45,17 +45,19 @@ const highestValueInArray = (arr : Array<any>) => {
 }
 // console.log(highestValueInArray([222, 221, '0']));
 
+const forbiddenWords = ['truffes', 'confiture', 'mayonnaise']
 const detectForbiddenWords = (sentence : string) => {
-    const forbiddenWords = ['truffes', 'confitures', 'mayonnaise']
     const words = sentence.split(' ')
     return words.some(word => forbiddenWords.includes(word.toLocaleLowerCase()))
 }
 
 const replaceForbiddenWords = (sentence : string) => {
-    const forbiddenWords = ['truffes', 'confitures', 'mayonnaise']
-    return forbiddenWords.reduce((goodSentence, currentForbiddenWord) => {
-        return goodSentence.replace(currentForbiddenWord, 'xxx')
-    }, sentence)
+    const hasForbiddenWords = detectForbiddenWords(sentence)
+    if(hasForbiddenWords) {
+        return forbiddenWords.reduce((sentence, currentForbiddenWord) => {
+            return sentence.replace(currentForbiddenWord, 'xxx')
+        }, sentence)
+    } else return sentence
 }
 
 export {
