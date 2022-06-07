@@ -1,4 +1,16 @@
-import {sum, checkSentenceLength, isPalindrom, is_Array, isArrayOfNumbers, isArrayOfWords,highestNumberInArray, highestWordInArray ,highestValueInArray} from "../app.js";
+import { 
+    sum, 
+    checkSentenceLength, 
+    isPalindrom, 
+    is_Array, 
+    isArrayOfNumbers, 
+    isArrayOfWords,
+    highestNumberInArray, 
+    highestWordInArray,
+    highestValueInArray, 
+    detectForbiddenWords 
+} from "../app.js";
+
 
 describe('adds 1 + 2 to be greater than 0 and equal to 3', () => {
     it('should be greater than 0', ()=> {
@@ -37,5 +49,13 @@ describe('return the hightest number or world in an array', () => {
         expect(highestValueInArray(['test', 3])).toBe('mixed values')
         expect(highestValueInArray([0, 2])).toBe(2)
         expect(highestValueInArray(['hello', 'testing'])).toBe('testing')
+    })
+})
+describe('forbidden words', () => {
+    it('should detect a forbidden word', () => {
+        expect(detectForbiddenWords('Vous êtes tous des truffes')).toBeTruthy()
+    })
+    it('should NOT detect a forbidden word', () => {
+        expect(detectForbiddenWords('Vous êtes tous des tomates cerise')).toBeFalsy()
     })
 })
