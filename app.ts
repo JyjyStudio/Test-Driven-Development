@@ -54,10 +54,14 @@ const detectForbiddenWords = (sentence : string) => {
 const replaceForbiddenWords = (sentence : string) => {
     const hasForbiddenWords = detectForbiddenWords(sentence)
     if(hasForbiddenWords) {
-        return forbiddenWords.reduce((sentence, currentForbiddenWord) => {
-            return sentence.replace(currentForbiddenWord, 'xxx')
-        }, sentence)
-    } else return sentence
+        const words = sentence.split(' ')
+        let result = words.map(word => {
+            // si on trouve un mot interdit (insensible à la casse) on le remplace par xxx sinon on retourne ce même mot
+            return forbiddenWords.includes(word.toLocaleLowerCase()) ? 'xxx' : word
+        })
+        return result.join(' ')
+    } 
+    else return sentence
 }
 
 export {
