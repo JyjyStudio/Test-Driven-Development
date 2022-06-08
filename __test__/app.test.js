@@ -65,4 +65,7 @@ describe('forbidden words', () => {
     it('should return the same sentence if no forbidden words detected', () => {
         expect(replaceForbiddenWords('Vous êtes tous des pommes joufflues')).toBe('Vous êtes tous des pommes joufflues')
     })
+    it('detects case sensitive', () => {
+        expect(replaceForbiddenWords('Vous êtes tous des TruFfeS')).toBe('Vous êtes tous des xxx')
+    })
 })
