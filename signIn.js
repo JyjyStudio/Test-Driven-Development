@@ -3,6 +3,7 @@ import SignIn from './pages/signIn/index.js'
 const USER_EMAIL = 'jyhad@test.fr'
 const USER_PASSWORD = '123456'
 
+document.body.innerHTML = SignIn.render()
 
 const checkUserEmailInput = () => {
     const $userMailInput = document.querySelector('#user-email')
@@ -31,7 +32,6 @@ const checkUserPasswordInput = () => {
     } else {
         $userPasswordErrorMSg.classList.remove('hidden')
     }
-
     return isUserPasswordValid
 }
 
@@ -52,7 +52,6 @@ const handleSignInForm = () => {
     })
 }
 
-document.body.innerHTML = SignIn.render()
 handleSignInForm()
 
 export {
