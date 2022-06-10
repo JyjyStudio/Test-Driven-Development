@@ -46,7 +46,7 @@ jobs:
         # Allow an empty commit to be created
           allow_empty_commit: true
         # Build directory to deploy
-          build_dir: '/'
+          build_dir: dist
         # Whether to treat build_dir as an absolute path (optional, default is false)
           absolute_build_dir: true
         # If enabled, the content of symbolic links will be copied
