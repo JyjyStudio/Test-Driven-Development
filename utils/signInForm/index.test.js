@@ -118,3 +118,5 @@ describe('SignInForm Integration Test Suites', () => {
         ).toHaveClass('hidden')
     })
 })
+
+//test github ACTIONS CI
