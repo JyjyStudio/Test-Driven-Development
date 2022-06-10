@@ -1,1 +1,1 @@
-<img src="https://app.travis-ci.com/JyjyStudio/Test-Driven-Development.svg?branch=main"/>
+[![Build Status](https://app.travis-ci.com/JyjyStudio/Test-Driven-Development.svg?branch=main)](https://app.travis-ci.com/JyjyStudio/Test-Driven-Development)
