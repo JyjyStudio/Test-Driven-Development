@@ -10,7 +10,7 @@ import {
     highestValueInArray, 
     detectForbiddenWords,
     replaceForbiddenWords
-} from "../app.js";
+} from "./index.js";
 
 
 describe('adds 1 + 2 to be greater than 0 and equal to 3', () => {
