@@ -5,7 +5,7 @@
  import '@testing-library/jest-dom'
  import { getByRole, getByTestId, getByLabelText } from '@testing-library/dom'
  import userEvent from '@testing-library/user-event'
- import { handleSignInForm } from '../../utils/SignInForm/index.js'
+ import { handleSignInForm } from '../../utils/SignInForm/index'
  import SignInPage from '../../pages/signIn/index'
 
 
