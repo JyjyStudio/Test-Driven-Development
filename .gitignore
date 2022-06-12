@@ -1,3 +1,4 @@
 node_modules
 coverage
 tests_output
+_selenium-server.log
