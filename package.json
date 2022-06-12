@@ -2,7 +2,9 @@
     "scripts": {
         "test": "jest",
         "test:cov": "jest --coverage",
-        "ts": "tsc --watch"
+        "ts": "tsc --watch",
+        "nightwatch:chrome": "npx nightwatch --env selenium.chrome",
+        "nightwatch:firefox": "npx nightwatch --env selenium.chrome"
     },
     "devDependencies": {
         "@babel/core": "^7.18.2",
